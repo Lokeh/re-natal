@@ -9,6 +9,7 @@
             :plugins [[lein-cljsbuild "1.1.4"]
                       [lein-figwheel "0.5.14"]]
             :clean-targets ["target/" #_($PLATFORM_CLEAN$)]
+            :jvm-opts ["--add-modules" "java.xml.bind"]
             :aliases {"prod-build" ^{:doc "Recompile code with prod profile."}
                                    ["do" "clean"
                                     ["with-profile" "prod" "cljsbuild" "once"]]
